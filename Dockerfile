@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM centos:centos8
 
 ARG PETALINUX_DESTDIR=/opt/pkg/petalinux
 ARG PETALINUX_INSTALLER=petalinux-v2019.1-final-installer.run
@@ -17,14 +17,18 @@ RUN mkdir -p $PETALINUX_DESTDIR && \
 		file \
 		gcc-c++ \
 		glib2-devel \
+		git \
 		gpg \
 		libtool \
 		make \
 		ncurses \
 		ncurses-devel \
 		net-tools \
+		openssl-devel \
 		patch \
 		perl \
+		redhat-lsb-core \
+		rsync \
 		socat \
 		texinfo \
 		unzip \
@@ -55,4 +59,3 @@ RUN yum -y install less && yum -y clean all
 USER petalinux
 
 ENTRYPOINT ["/entrypoint.sh"]
-
