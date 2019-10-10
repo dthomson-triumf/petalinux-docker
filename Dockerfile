@@ -1,4 +1,4 @@
-FROM centos:centos8
+FROM centos:centos7
 
 ARG PETALINUX_DESTDIR=/opt/pkg/petalinux
 ARG PETALINUX_INSTALLER=petalinux-v2019.1-final-installer.run
